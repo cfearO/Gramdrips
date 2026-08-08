@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: gram-drips
+    runtime: node
+    plan: free
+    buildCommand: "true" # no dependencies to install
+    startCommand: node server.js
+    healthCheckPath: /api/ledger
+    envVars:
+      - key: BOT_TOKEN
+        sync: false # set this in the Render dashboard — from @BotFather
+      - key: APP_DOMAIN
+        sync: false # set to your onrender.com URL once you have it, e.g. gram-drips.onrender.com
+      - key: SESSION_SECRET
+        generateValue: true # Render generates a random one for you
+      - key: DEV_MODE
+        value: "true" # set to "false" once Telegram + TonConnect are fully wired and tested
+      - key: TONCENTER_API_KEY
+        sync: false # optional but recommended — free from @tonapibot on Telegram, raises the 1req/s rate limit
