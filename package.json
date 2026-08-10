@@ -1,0 +1,18 @@
+{
+  "name": "gram-drips",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Collect/status/ledger/referral/withdraw API and static frontend for Gram Drips, deployable as a single service. Zero-dependency except for @ton/* (needed for real withdrawal signing/broadcast — see wallet.js).",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@ton/ton": "^16.3.0",
+    "@ton/core": "^0.63.1",
+    "@ton/crypto": "^3.3.0"
+  }
+}
